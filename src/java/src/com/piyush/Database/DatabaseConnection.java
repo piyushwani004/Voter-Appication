@@ -1,4 +1,4 @@
-package com.piyush.Database;
+package src.com.piyush.Database;
 
 import java.sql.Connection; 
 import java.sql.DriverManager; 
