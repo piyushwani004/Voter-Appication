@@ -1,114 +1,133 @@
-<html lang = "en">
-   <head>
-      <!-- Meta tags -->
-      <meta charset = "utf-8">
-      <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
-      
-      <!-- Bootstrap CSS -->
-      <link rel = "stylesheet" 
-         href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-         integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-         crossorigin = "anonymous">
-      
-      <title>Registration Page</title>
-      <style type="text/css">
-        body
-        {
-           background-color:#83e0dc;
-        }
-      </style>
-   </head>
-   
-   <body>
-   <form action="<%=request.getContextPath()%>/RegisterServlet" method="get">
-      <div class = "container">
-         <form>
-            <h2>Registration Form</h2>
-            <br/>
-            <br/>
-            <div class = "form-row">
-               <div class = "form-group col-md-6">
-                  <label for = "inputEmail4">First Name</label>
-                  <input type = "text" name="Fname" class =" form-control" 
-                     id = "inputEmail4" placeholder = "First Name">
-               </div>
-               
-               <div class = "form-group col-md-6">
-                  <label for = "inputPassword4">Last Name</label>
-                  <input type = "text" name="Lname" class = "form-control" 
-                     id = "inputPassword4" placeholder = "Last Name">
-               </div>
-            </div>
-            
-            <div class = "form-row">
-               <div class = "form-group col-md-6">
-                  <label for = "inputEmail4">Email ID</label>
-                  <input type = "text" name="Email" class =" form-control" 
-                     id = "inputEmail41" placeholder = "Enter Email ID">
-               </div>
-               
-               <div class = "form-group col-md-6">
-                  <label for = "inputPassword4">Mobile No.</label>
-                  <input type = "text" name="Mobile" class = "form-control" 
-                     id = "inputPassword41" placeholder = "Enter Mobile No.">
-               </div>
-            </div>
-            
-            <div class = "form-row">
-               <div class = "form-group col-md-6">
-                  <label for = "inputCity">City</label>
-                  <input type = "text" name="City" class = "form-control" placeholder = "City" 
-                     id = "inputCity">
-               </div>
-               
-               <div class = "form-group col-md-4">
-                  <label for = "inputState">Department</label>
-                  <select id = "inputState" name="Dept" class = "form-control">
-                     <option selected disabled>Select Department</option>
-                     <option>Computer</option>
-                     <option>Mechanical</option>
-                     <option>Civil</option>
-                     <option>Electrical</option>
-                     <option>MBA</option>
-                  </select>
-               </div>
-               
-               <div class = "form-group col-md-2">
-                  <label for = "inputZip">Pin Code</label>
-                  <input type = "text" name="Pin" class = "form-control" id = "inputZip" 
-                     placeholder = "Pin Code">
-               </div>
-            </div>
-            
-            <div class = "form-group">
-               <div class = "form-check">
-                  <input class = "form-check-input" type = "checkbox" id = "gridCheck" >
-                  <label class = "form-check-label" for = "gridCheck">
-                     I Agree To Terms and Conditions
-                  </label>
-               </div>
-            </div>
-            <button type = "submit" class = "btn btn-primary">Register</button>
-         </form>
-      </div>
-      
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-         integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-         crossorigin = "anonymous">
-      </script>
-      
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-         integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
-         crossorigin = "anonymous">
-      </script>
-      
-      <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-         integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
-         crossorigin = "anonymous">
-      </script>
-      
-      
-      </form>
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>REGISTRATION</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+    <div class="container-contact100" style="background-color: #1994ac;">
+		
+
+        <div class="wrap-contact100" style="border: 2px solid #3300ff;">
+			<div class="contact100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<span class="contact100-form-title-1">
+					Student Registration Form
+				</span>				
+			</div>
+
+			<form class="contact100-form validate-form"  action="<%=request.getContextPath()%>/RegisterServlet" method="get">
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">First_Name:</span>
+					<input class="input100" type="text" name="Fname" placeholder="Enter First name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Last_Name:</span>
+					<input class="input100" type="text" name="Lname" placeholder="Enter Last name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email:</span>
+					<input class="input100" type="text" name="Email" placeholder="Enter email addess">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+					<span class="label-input100">Phone:</span>
+					<input class="input100" type="text" name="Mobile" placeholder="Enter phone number">
+					<span class="focus-input100"></span>
+				</div>
+				
+                <div class="wrap-input100 validate-input" data-validate="City is required">
+					<span class="label-input100">City:</span>
+					<input class="input100" type="text" name="City" placeholder="Enter City">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input" data-validate="Deparment is required">
+					<span class="label-input100">Department:</span>
+					<input class="input100" type="text" name="Dept" placeholder="Enter Deparment">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input" data-validate="Roll Number is required">
+					<span class="label-input100">Roll_Number:</span>
+					<input class="input100" type="text" name="Roll" placeholder="Enter Roll Number">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="js/map-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
 </html>

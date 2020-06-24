@@ -11,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import static javax.swing.text.html.HTML.Attribute.ID;
 
 import src.com.piyush.Database.DatabaseConnection;
 
@@ -36,7 +35,8 @@ public class RegisterServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
      * response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    {
         // TODO Auto-generated method stub
         try {
             //response.getWriter().println(request.getParameter("Fname"));
@@ -61,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
             pst.setString(5, request.getParameter("Mobile"));
             pst.setString(6, request.getParameter("City"));
             pst.setString(7, request.getParameter("Dept"));
-            pst.setString(8, request.getParameter("Pin"));
+            pst.setString(8, request.getParameter("Roll"));
             int i = pst.executeUpdate();
             if (i > 0) {
                 response.getWriter().println("added");
