@@ -160,7 +160,7 @@
 
                 <form class="contact100-form validate-form"  action="<%=request.getContextPath()%>/VoterServlet" method="get">
 
-                    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                    
                     <div class="file-upload">
                         <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger('click')">Add Image</button>
 
@@ -177,6 +177,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
                         <span class="label-input100">First_Name:</span>
                         <input class="input100" type="text" name="Fname" placeholder="Enter First name">
@@ -214,8 +215,8 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Roll Number is required">
-                        <span class="label-input100">Roll_Number:</span>
-                        <input class="input100" type="text" name="Roll" placeholder="Enter Roll Number">
+                        <span class="label-input100">Party_Name:</span>
+                        <input class="input100" type="text" name="Party_Name" placeholder="Enter Party Number">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -234,7 +235,8 @@
 
 
         <div id="dropDownSelect1"></div>
-
+        
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <!--===============================================================================================-->
         <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
         <!--===============================================================================================-->
