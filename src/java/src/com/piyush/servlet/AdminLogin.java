@@ -2,7 +2,9 @@ package src.com.piyush.servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +21,8 @@ public class AdminLogin extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private int ID;
+    private String user;
+    private String pass;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,12 +38,23 @@ public class AdminLogin extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            String userp = request.getParameter("username");
+            String passp = request.getParameter("password");
             Connection con = DatabaseConnection.initializeDatabase();
-            PreparedStatement ps=con.prepareStatement("select * from userreg where name=? and pass=?");  
-            
-            String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-
+            String s = "select *from adminlogin";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(s);
+            while (rs.next()) {
+                user = rs.getString(1);
+                pass = rs.getString(2);
+            }
+            if (userp.equals(user) && passp.equals(pass)) {
+                RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
+                rd.forward(request, response);
+            } else {
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                rd.include(request, response);
+            }
         } catch (Exception e) {
 
         }
