@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,9 +65,11 @@ public class RegisterServlet extends HttpServlet {
             pst.setString(8, request.getParameter("Roll"));
             int i = pst.executeUpdate();
             if (i > 0) {
-                response.getWriter().println("added");
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                rd.forward(request, response);
             } else {
-                response.getWriter().println("Not added");
+                RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+                rd.forward(request, response);
             }
 
             String s1 = "update uid set ID=? ";
