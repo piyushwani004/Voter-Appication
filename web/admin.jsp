@@ -1,3 +1,4 @@
+<%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
@@ -122,6 +123,8 @@
     </head>
     <body>
         <%
+            Blob image = null;
+            byte[] imgData = null;
             Connection con = null;
         %>
 
@@ -158,6 +161,7 @@
                                 <td><%=rs.getString(6)%></td>
                                 <td><%=rs.getString(7)%></td>
                                 <td><%=rs.getString(8)%></td>
+
                             </tr>
 
                         </tbody>
