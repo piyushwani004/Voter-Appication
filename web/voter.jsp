@@ -158,24 +158,12 @@
                     </span>				
                 </div>
 
-                <form class="contact100-form validate-form"  action="<%=request.getContextPath()%>/VoterServlet" method="get">
+                <form class="contact100-form validate-form"  action="<%=request.getContextPath()%>/VoterServlet" enctype="multipart/form-data" method="post">
 
-                    
-                    <div class="file-upload">
-                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger('click')">Add Image</button>
-
-                        <div class="image-upload-wrap">
-                            <input class="file-upload-input" type='file' name="fileToUpload" onchange="readURL(this);" accept="image/*" />
-                            <div class="drag-text">
-                                <h3>Drag and drop a file or select add Image</h3>
-                            </div>
-                        </div>
-                        <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="your image" />
-                            <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                            </div>
-                        </div>
+                    <div class="wrap-input100 validate-input" >
+                        <span class="label-input100">Portrait_Photo:</span>
+                        <input type="file" class="form-control" name="file" required="required" placeholder="Enter photo">
+                        <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
@@ -235,7 +223,7 @@
 
 
         <div id="dropDownSelect1"></div>
-        
+
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <!--===============================================================================================-->
         <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -262,13 +250,13 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
         <script>
-                                    window.dataLayer = window.dataLayer || [];
-                                    function gtag() {
-                                        dataLayer.push(arguments);
-                                    }
-                                    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-                                    gtag('config', 'UA-23581568-13');
+            gtag('config', 'UA-23581568-13');
         </script>
 
     </body>

@@ -94,11 +94,11 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="<%=request.getContextPath()%>/AdminLogin" method="get">
+    <form action="<%=request.getContextPath()%>/AdminLogin" method="post">
 		<div class="avatar">
                     <img src="images/icons/avatar.png" alt="Avatar">
 		</div>
-        <h2 class="text-center">Member Login</h2>   
+        <h2 class="text-center">Admin Login</h2>   
         <div class="form-group">
         	<input type="text" class="form-control" name="username" placeholder="Username" required="required">
         </div>
