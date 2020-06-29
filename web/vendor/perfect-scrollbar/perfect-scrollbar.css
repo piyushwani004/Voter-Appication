@@ -98,6 +98,12 @@
   width: 11px;
 }
 
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .ps {

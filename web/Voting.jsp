@@ -1,119 +1,142 @@
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import ="src.com.piyush.Database.DatabaseConnection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util1.css">
+        <link rel="stylesheet" type="text/css" href="css/main1.css">
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
         <title>Voting Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <style>
+        <style type="text/css">
             body {
-                color: #fff;
-                background: #d47677;
+
+                background-color:#1F2739;
             }
-            .form-control {
-                min-height: 41px;
-                background: #fff;
-                box-shadow: none !important;
-                border-color: #e3e3e3;
-            }
-            .form-control:focus {
-                border-color: #fff;
-            }
-            .form-control, .btn {        
-                border-radius: 2px;
-            }
-            .login-form {
-                width: 350px;
-                margin: 0 auto;
-                padding: 100px 0 30px;		
-            }
-            .login-form form {
-                color: #7a7a7a;
-                border-radius: 2px;
-                margin-bottom: 15px;
-                font-size: 13px;
-                background: #464a4e;
-                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-                padding: 30px;	
-                position: relative;	
-            }
-            .login-form h2 {
-                font-size: 22px;
-                margin: 35px 0 25px;
-            }
-            .login-form .avatar {
-                position: absolute;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-                top: -50px;
-                width: 95px;
-                height: 95px;
-                border-radius: 50%;
-                z-index: 9;
-                background: #70c5c0;
-                padding: 15px;
-                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-            }
-            .login-form .avatar img {
-                width: 100%;
-            }	
-            .login-form input[type="checkbox"] {
-                margin-top: 2px;
-            }
-            .login-form .btn {        
-                font-size: 16px;
-                font-weight: bold;
-                background: #70c5c0;
-                border: none;
-                margin-bottom: 20px;
-            }
-            .login-form .btn:hover, .login-form .btn:focus {
-                background: #50b8b3;
-                outline: none !important;
-            }    
-            .login-form a {
-                color: #fff;
-                text-decoration: underline;
-            }
-            .login-form a:hover {
-                text-decoration: none;
-            }
-            .login-form form a {
-                color: #7a7a7a;
-                text-decoration: none;
-            }
-            .login-form form a:hover {
-                text-decoration: underline;
-            }
-            h2{
-                color: #fff;
-                size: 16px;
+            .serchbar
+            {
+                width: 50%;
+                height: 10%;
+                margin-top:1%; 
+                margin-left: 22%;
+
             }
         </style>
     </head>
+
     <body>
-        <div class="login-form">
-            <form action="<%=request.getContextPath()%>/VotingServlet" method="post">
-                <div class="avatar">
-                    <img src="images/icons/avatar.png" alt="Avatar">
-                </div>
-                <h2 class="text-center">Student Login</h2>   
-                <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Student Mobile No." required="required">
-                </div>
-                <div class="form-group">
-                    .<input type="password" class="form-control" name="password" placeholder="Student Roll No." required="required">
-                </div>        
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+        <%
+            byte[] imgData = null;
+            Connection con = null;
+        %>
+        <div class="serchbar">
+            <form action=" " method="post">
+                <input class="form-control" type="text" name="search" placeholder="Search Here..."/>
             </form>
         </div>
+        <div >
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver3 m-b-110">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100 head">
+                                        <th class="cell100 column1">First Name</th>
+                                        <th class="cell100 column2">Last Name</th>
+                                        <th class="cell100 column3">City</th>
+                                        <th class="cell100 column4">Department</th>
+                                        <th class="cell100 column5">Vote</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <%
+                            try {
+                                con = DatabaseConnection.initializeDatabase();
+                                Statement st = (Statement) con.createStatement();
+                                String sql = "";
+                                String query = request.getParameter("search");
+                                if (query != null) {
+                                    sql = "select * from register where Fname like '%" + query + "%' or Lname like '%" + query + "%' ";
+                                } else {
+                                    sql = "select * from register order by ID desc";
+                                }
+                                ResultSet rs = st.executeQuery(sql);
+                                while (rs.next()) {
+                        %>
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody>
+                                    <tr class="row100 body">
+                                        <td class="cell100 column1"><%=rs.getString(2)%></td>
+                                        <td class="cell100 column2"><%=rs.getString(3)%></td>
+                                        <td class="cell100 column3"><%=rs.getString(6)%></td>
+                                        <td class="cell100 column4"><%=rs.getString(7)%></td>
+                                        <td class="cell100 column5">
+                                            <form action="voteLogin.jsp" method="post">
+                                                <button class="contact100-form-btn">Vote</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <%
+                                        }
+                                        con.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===============================================================================================-->	
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script>
+            $('.js-pscroll').each(function () {
+                var ps = new PerfectScrollbar(this);
+
+                $(window).on('resize', function () {
+                    ps.update();
+                })
+            });
+
+
+        </script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -98,23 +98,6 @@
             }
 
             .container td:first-child { color: #FB667A; }
-
-
-
-            .container td:hover {
-                background-color: #FFF842;
-                color: #403E10;
-                font-weight: bold;
-
-                box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -2px 2px, #7F7C21 -2px 2px, #7F7C21 -2px 2px, #7F7C21 -2px 2px;
-                transform: translate3d(0px, 0px, 0);
-
-                transition-delay: 0s;
-                transition-duration: 0.4s;
-                transition-property: all;
-                transition-timing-function: line;
-            }
-
             @media (max-width: 800px) {
                 .container td:nth-child(4),
                 .container th:nth-child(4) { display: none; }
@@ -178,6 +161,7 @@
                     <br/>
                     <br/>
                     <br/>
+                    
                     <h3>Voter Registration Data</h3>
                     <table class="container">
                         <thead>
