@@ -94,13 +94,13 @@
     </head>
     <body>
         <div class="login-form">
-            <form action="vote.jsp" method="post">
+            <form action="<%=request.getContextPath()%>/VoteLogin" method="post">
                 <div class="avatar">
                     <img src="images/icons/avatar.png" alt="Avatar">
                 </div>
                 <h2 class="text-center">Admin Login</h2>   
                 <div class="form-group">
-                    <input type="text" class="form-control" name="gmail" placeholder="Gmail" required="required">
+                    <input type="text" class="form-control" name="roll" placeholder="Roll Number" required="required">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="mobile" placeholder="Mobile" required="required">

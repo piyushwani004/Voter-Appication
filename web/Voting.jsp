@@ -44,6 +44,9 @@
                 margin-left: 22%;
 
             }
+            .text-center{
+                 color: grey;
+            }
         </style>
     </head>
 
@@ -57,8 +60,9 @@
                 <input class="form-control" type="text" name="search" placeholder="Search Here..."/>
             </form>
         </div>
-        <div >
+        <div>
             <div class="container-table100">
+                <h2 class="text-center">Collage Students list</h2>
                 <div class="wrap-table100">
                     <div class="table100 ver3 m-b-110">
                         <div class="table100-head">
