@@ -103,9 +103,27 @@
                 .container td:nth-child(4),
                 .container th:nth-child(4) { display: none; }
             }
+            .btn
+            {
+                margin: 10px;
+            }
+            form
+            {
+                display: inline;
+            }
         </style>
     </head>
     <body>
+
+        <script>
+            function start() {
+                window.location.href = "start.html";
+            }
+            function  stop(){
+                window.location.href = "index.html";
+            }
+        </script> 
+
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a href="index.html" class="navbar-brand">Home</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -118,17 +136,21 @@
                     <a href="adminLogin.jsp" class="nav-item nav-link active">Admin</a>
                     <a href="voter.jsp" class="nav-item nav-link">Voters</a>
                     <a href="register.jsp" class="nav-item nav-link">Registration</a>
-                    <a href="Voting.jsp" class="nav-item nav-link">Voting</a>
+                    <a href="Voting.jsp" class="nav-item nav-link" >Voting</a>
                 </div>
-                
             </div>
         </nav>
+        <form  method="post">
+            <button type="button" class="btn btn-info btn-lg" onclick="start()"><i class="fa fa-play"></i> Start </button>
+        </form>
+        <form  method="post">
+            <button type="button" class="btn btn-info btn-lg" onclick="stop()"><i class="fa fa-stop"></i> Stop </button>
+        </form>
         <%
             Blob image = null;
             byte[] imgData = null;
             Connection con = null;
         %>
-
         <h1>Server<span class="blue"><span class="yellow"> Side</pan></h1>
                     <br/>
                     <h3>Student Registration Data</h3>
