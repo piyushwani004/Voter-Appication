@@ -1,3 +1,4 @@
+<%@page import="java.util.Base64"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -105,11 +106,12 @@
         </style>
     </head>
     <body>
-        
+
         <%
-            Blob image = null;
+            Blob blob = null;
             byte[] imgData = null;
             Connection con = null;
+            String image;
         %>
         <%
             try {
@@ -122,13 +124,19 @@
         <div class="login-form">
             <form  action="<%=request.getContextPath()%>/VoteServlet" method="post">
                 <div class="avatar">
-                    <img src="images/icons/avatar.png" alt="Avatar">
+                    <%
+                        blob = rs.getBlob(9);
+                        byte[] imageBytes = blob.getBytes(1, (int) blob.length());
+                        String encodedImage = Base64.getEncoder().encodeToString(imageBytes);
+                        image = "data:image/jpg;base64," + encodedImage;
+                        out.print("<img src=" + image + ">" );
+                    %>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" required="required" value="<%=rs.getString(2)%>&nbsp;<%=rs.getString(3)%>">
+                    <input type="text" class="form-control" name="name" required="required" value="<%=rs.getString(2)%>&nbsp;<%=rs.getString(3)%>" readonly>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="party" required="required" value="<%=rs.getString(8)%>" >
+                    <input type="text" class="form-control" name="party" required="required" value="<%=rs.getString(8)%>" readonly >
                 </div>
                 <div class="form-group">
                 </div>        

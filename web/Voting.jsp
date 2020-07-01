@@ -12,7 +12,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--===============================================================================================-->	
+        <!--===============================================================================================-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -61,6 +63,22 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="about.jsp" class="nav-item nav-link active">About</a>
+                    <a href="adminLogin.jsp" class="nav-item nav-link active">Admin</a>
+                    <a href="voter.jsp" class="nav-item nav-link">Voters</a>
+                    <a href="register.jsp" class="nav-item nav-link">Registration</a>
+                    <a href="Voting.jsp" class="nav-item nav-link">Voting</a>
+                </div>
+            </div>
+        </nav>
         <%
             byte[] imgData = null;
             Connection con = null;

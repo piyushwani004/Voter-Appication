@@ -13,6 +13,7 @@
         <meta charset="ISO-8859-1">
         <title>Admin</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <style type="text/css">
             body {
                 font-family: 'Open Sans', sans-serif;
@@ -105,6 +106,23 @@
         </style>
     </head>
     <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="about.jsp" class="nav-item nav-link active">About</a>
+                    <a href="adminLogin.jsp" class="nav-item nav-link active">Admin</a>
+                    <a href="voter.jsp" class="nav-item nav-link">Voters</a>
+                    <a href="register.jsp" class="nav-item nav-link">Registration</a>
+                    <a href="Voting.jsp" class="nav-item nav-link">Voting</a>
+                </div>
+                
+            </div>
+        </nav>
         <%
             Blob image = null;
             byte[] imgData = null;
@@ -161,7 +179,7 @@
                     <br/>
                     <br/>
                     <br/>
-                    
+
                     <h3>Voter Registration Data</h3>
                     <table class="container">
                         <thead>
