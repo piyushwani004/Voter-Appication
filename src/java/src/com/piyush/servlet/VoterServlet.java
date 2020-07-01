@@ -40,15 +40,15 @@ public class VoterServlet extends HttpServlet {
             try {
                 Connection con = DatabaseConnection.initializeDatabase();
 
-                String s = "select *from uid";
+                String s = "select *from vid";
                 Statement st = (Statement) con.createStatement();
                 ResultSet rs = st.executeQuery(s);
                 while (rs.next()) {
-                    ID = rs.getInt(2);
-                    ID++;
+                    ID = rs.getInt(1);
+                    ++ID;
                 }
 
-                PreparedStatement ps = con.prepareStatement("insert into votedata values(?,?,?,?,?,?,?,?,?)");
+                PreparedStatement ps = con.prepareStatement("insert into votedata values(?,?,?,?,?,?,?,?,?,?)");
 
                 ps.setInt(1, ID);
                 ps.setString(2, request.getParameter("Fname"));
@@ -60,12 +60,13 @@ public class VoterServlet extends HttpServlet {
                 ps.setString(8, request.getParameter("Party_Name"));
                 InputStream is = part.getInputStream();
                 ps.setBlob(9, is);
+                ps.setInt(10,0);
                 int i = ps.executeUpdate();
                 response.getWriter().println(i);
 
-                String s1 = "update uid set vid=?";
+                String s1 = "update vid set idv=?";
                 PreparedStatement stp1 = con.prepareStatement(s1);
-                stp1.setInt(2, ID);
+                stp1.setInt(1, ID);
                 stp1.executeUpdate();
 
                 if (i > 0) {

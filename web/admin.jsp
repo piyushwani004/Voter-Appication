@@ -71,7 +71,7 @@
             .container {
                 text-align: left;
                 overflow: hidden;
-                width: 80%;
+                width: 100%;
                 margin: 0 auto;
                 display: table;
                 padding: 0 0 8em 0;
@@ -175,6 +175,7 @@
                                 <th><h1>Department</h1></th>
                                 <th><h1>Party Name</h1></th>  
                                 <th><h1>Photo</h1></th>  
+                                <th><h1>Vote</h1></th>  
                             </tr>
                         </thead>
                         <%
@@ -196,6 +197,7 @@
                                 <td><%=rs.getString(7)%></td>
                                 <td><%=rs.getString(8)%></td>
                                 <td><%=rs.getBlob(9)%></td>
+                                <td><%=rs.getInt(10)%></td>
                             </tr>
 
                         </tbody>

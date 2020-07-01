@@ -25,9 +25,11 @@
             }
             .form-control {
                 min-height: 41px;
-                background: #7a7a7a;
+                background: #e3e3e3;
                 box-shadow: none !important;
                 border-color: #e3e3e3;
+                margin-top: 30px;
+                margin-bottom: 30px;
             }
             .form-control:focus {
                 border-color: #70c5c0;
@@ -103,12 +105,14 @@
         </style>
     </head>
     <body>
+        
         <%
             Blob image = null;
             byte[] imgData = null;
             Connection con = null;
         %>
-        <%      try {
+        <%
+            try {
                 con = DatabaseConnection.initializeDatabase();
                 String sql = "select * from votedata";
                 Statement st = (Statement) con.createStatement();
@@ -120,9 +124,11 @@
                 <div class="avatar">
                     <img src="images/icons/avatar.png" alt="Avatar">
                 </div>
-                <h2 class="text-center" id="demo"><%=rs.getString(2)%>&nbsp;<%=rs.getString(3)%></h2>   
                 <div class="form-group">
-                    <h2 class="text-center"><%=rs.getString(8)%></h2>
+                    <input type="text" class="form-control" name="name" required="required" value="<%=rs.getString(2)%>&nbsp;<%=rs.getString(3)%>">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="party" required="required" value="<%=rs.getString(8)%>" >
                 </div>
                 <div class="form-group">
                 </div>        
@@ -140,3 +146,4 @@
         %>
     </body>
 </html>
+
