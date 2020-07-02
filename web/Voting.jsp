@@ -97,11 +97,12 @@
                             <table>
                                 <thead>
                                     <tr class="row100 head">
-                                        <th class="cell100 column1">First Name</th>
-                                        <th class="cell100 column2">Last Name</th>
-                                        <th class="cell100 column3">City</th>
-                                        <th class="cell100 column4">Department</th>
-                                        <th class="cell100 column5">Vote</th>
+                                        <th class="cell100 column1">ID</th>
+                                        <th class="cell100 column2">First Name</th>
+                                        <th class="cell100 column3">Last Name</th>
+                                        <th class="cell100 column4">City</th>
+                                        <th class="cell100 column5">Department</th>
+                                        <th class="cell100 column6">Vote</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -124,11 +125,12 @@
                             <table>
                                 <tbody>
                                     <tr class="row100 body">
-                                        <td class="cell100 column1"><%=rs.getString(2)%></td>
-                                        <td class="cell100 column2"><%=rs.getString(3)%></td>
-                                        <td class="cell100 column3"><%=rs.getString(6)%></td>
-                                        <td class="cell100 column4"><%=rs.getString(7)%></td>
-                                        <td class="cell100 column5">
+                                        <td class="cell100 column1"><%=rs.getString(1)%></td>
+                                        <td class="cell100 column2"><%=rs.getString(2)%></td>
+                                        <td class="cell100 column3"><%=rs.getString(3)%></td>
+                                        <td class="cell100 column4"><%=rs.getString(6)%></td>
+                                        <td class="cell100 column5"><%=rs.getString(7)%></td>
+                                        <td class="cell100 column6">
                                             <form action="voteLogin.jsp" method="post">
                                                 <button class="contact100-form-btn">Vote</button>
                                             </form>

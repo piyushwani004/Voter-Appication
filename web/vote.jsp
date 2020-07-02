@@ -133,6 +133,9 @@
                     %>
                 </div>
                 <div class="form-group">
+                    <input type="text" class="form-control" name="id" required="required" value="<%=rs.getString(1)%>" readonly>
+                </div>
+                <div class="form-group">
                     <input type="text" class="form-control" name="name" required="required" value="<%=rs.getString(2)%>&nbsp;<%=rs.getString(3)%>" readonly>
                 </div>
                 <div class="form-group">
