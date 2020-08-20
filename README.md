@@ -12,4 +12,4 @@ The proposed system all the data related to elections in the college is done onl
 
 Screenshot :
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text]()
