@@ -13,3 +13,7 @@ The proposed system all the data related to elections in the college is done onl
 Screenshot :
 
 ![vote](https://user-images.githubusercontent.com/56467741/90803277-8500d080-e2e6-11ea-80d3-9fd50fbc2044.PNG)
+
+![vote1](https://user-images.githubusercontent.com/56467741/90803448-c0030400-e2e6-11ea-9f83-07108a4dd8c0.PNG)
+
+![vote2](https://user-images.githubusercontent.com/56467741/90803504-d9a44b80-e2e6-11ea-92dc-8608ff1d7c48.PNG)
